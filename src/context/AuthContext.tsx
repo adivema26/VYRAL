@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
-import { UserData, UserFormData } from '../types/auth';
+import { UserData } from '../types/auth';
 import { initializeApp, FirebaseApp } from 'firebase/app';
 import { 
   getAuth, 
@@ -76,7 +76,8 @@ export const AuthProvider = ({ children }) => {
       console.log("AuthContext: Auth state changed. Firebase User:", firebaseUser ? firebaseUser.email : 'null');
       if (firebaseUser) {
         const userId = firebaseUser.uid;
-        const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'profile', userId);
+        // Corrected path to a simple "users" collection
+        const userDocRef = doc(db, 'users', userId);
         
         try {
           const userDocSnap = await getDoc(userDocRef);
@@ -139,7 +140,8 @@ export const AuthProvider = ({ children }) => {
       return;
     }
     try {
-      const userDocRef = doc(db, 'artifacts', appId, 'users', user.id, 'profile', user.id);
+      // Corrected path to a simple "users" collection
+      const userDocRef = doc(db, 'users', user.id);
       await updateDoc(userDocRef, { ...newUserData });
       setUser(newUserData);
     } catch (error) {

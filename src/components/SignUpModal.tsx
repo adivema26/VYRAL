@@ -39,8 +39,11 @@ const SignUpModal = ({ isOpen, onClose }) => {
 
   const handleGoogleSignIn = async () => {
     setIsLoading(true);
-    await googleSignup();
+    const success = await googleSignup(); // `googleSignup` returns a boolean for success
     setIsLoading(false);
+    if (success) {
+      onClose();
+    }
   };
 
   return (
@@ -76,7 +79,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 </div>
               ) : (
                 <div className="flex items-center space-x-2">
-                  <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
+                  <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M44.5 20H24V28.5H35.25C34.725 31.85 32.8 35.1 30.15 37.15L36.25 41.65C39.5 38.65 41.5 34.5 42.5 29.75H44.5V20Z" fill="#4285F4"/>
                     <path d="M24 45C30.6 45 36.25 42.85 40.5 39.15L34.15 34.65C31.5 36.15 28.05 37.15 24 37.15C17.7 37.15 12.35 32.85 10.35 26.6H4.25V31.1H10.35C12.35 37.35 17.7 41.65 24 41.65C28.05 41.65 31.5 40.15 34.15 37.15L40.5 41.65C36.25 44.85 30.6 47 24 47C14.15 47 6.05 41.15 2.15 33.65L8.25 29.15C9.4 31.35 11.25 33.2 13.55 34.35C15.85 35.5 18.35 36.15 21 36.15C24.05 36.15 26.95 35.3 29.35 33.65Z" fill="#34A853"/>
                     <path d="M10.35 26.6C10.1 25.85 10 25.1 10 24.35C10 23.6 10.1 22.85 10.35 22.1L4.25 17.6C2.35 20.35 1.5 23.35 1.5 26.6C1.5 29.85 2.35 32.85 4.25 35.6L10.35 31.1C10.1 30.35 10 29.6 10 28.85C10 28.1 10.1 27.35 10.35 26.6Z" fill="#FBBC04"/>
