@@ -125,20 +125,28 @@ const HowItWorks = () => {
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="glass rounded-2xl p-6 text-center">
+            <a href="https://www.instagram.com/letsgetvyral/" target="_blank" rel="noopener noreferrer">
             <div className="text-3xl font-bold text-gradient mb-2">INSTAGRAM</div>
             <div className="text-sm text-muted-foreground/80"></div>
+            </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
+            <a href="" target="_blank" rel="noopener noreferrer">
             <div className="text-3xl font-bold text-gradient mb-2">YOUTUBE</div>
             <div className="text-sm text-muted-foreground/80"></div>
+            </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
+            <a href="" target="_blank" rel="noopener noreferrer">
             <div className="text-3xl font-bold text-gradient mb-2">X</div>
             <div className="text-sm text-muted-foreground/80"></div>
+            </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
+            <a href="" target="_blank" rel="noopener noreferrer">
             <div className="text-3xl font-bold text-gradient mb-2">FACEBOOK</div>
             <div className="text-sm text-muted-foreground/80"></div>
+            </a>
           </div>
         </div>
       </div>

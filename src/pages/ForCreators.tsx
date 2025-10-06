@@ -129,13 +129,13 @@ const ForCreators = () => {
                     size="lg" 
                     className="relative gradient-neon text-white neon-glow interactive-hover group overflow-hidden"
                   >
-                    <Link to="/campaigns">
+                    <a href="https://chat.whatsapp.com/BXa9TsxVyDm2I1sAvpwByV?mode=ems_copy_t" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
                         <span className="relative z-10 flex items-center">
                             Join Our Community
                             <ArrowRight className="ml-2 h-5 w-5 transform transition-transform group-hover:translate-x-1" />
                         </span>
                         <div className="absolute inset-0 shimmer"></div>
-                    </Link>
+                    </a>
                   </Button>
                  
                 </div>

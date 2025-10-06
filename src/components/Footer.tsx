@@ -1,5 +1,6 @@
 import Campaigns from "@/pages/Campaigns";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -25,17 +26,17 @@ const Footer = () => {
               Revolutionizing content monetization by connecting authentic creators with brands that value genuine engagement.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                📘
+              <a href="https://www.instagram.com/letsgetvyral/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                 <FaInstagram />
               </a>
-              <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                📸
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <FaFacebookF />
               </a>
-              <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                🐦
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <FaXTwitter />
               </a>
-              <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                💼
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <FaLinkedinIn />
               </a>
             </div>
           </div>
@@ -46,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground/80">
               <li><Link to="/campaigns"><a className="hover:text-gradient transition-all">Browse Campaigns</a></Link></li>
               <li><Link to="/campaigns"><a className="hover:text-gradient transition-all">Creator Guidelines</a></Link></li>
-              <li><Link to="/campaigns"><a className="hover:text-gradient transition-all">Payment Info</a></Link></li>
+              {/*<li><Link to="/campaigns"><a className="hover:text-gradient transition-all">Payment Info</a></Link></li> */}
               
             </ul>
           </div>

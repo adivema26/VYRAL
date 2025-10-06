@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
 import TermsModal from "../components/TermsModal"; // Import the new modal component
+import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 import { url } from "inspector";
 
 /**
@@ -29,7 +30,7 @@ const Campaigns = () => {
     {
       id: 1,
       brand: "VYRAL",
-      logo: "X",
+      logo: "/images/vyral_logo.jpg",
       payout: "100 coins",
       description: "Promote our brand and earn point to reedem yummy Frankies",
       progress: 75,
@@ -42,7 +43,7 @@ const Campaigns = () => {
      {
       id: 2,
       brand: "TechMonkiez",
-      logo: "👗",
+      logo: "/images/tm.png",
       payout: "₹49",
       description: "Create trendy fashion content and styling tips for our latest collection",
       progress: 26.8,
@@ -65,6 +66,13 @@ const Campaigns = () => {
     console.log(`User accepted terms for campaign ID: ${selectedCampaignId}`);
     // You can add a toast notification or redirect the user here
   };
+
+  const platformIcons = {
+  Instagram: <FaInstagram />,
+  YouTube: <FaYoutube />,
+  FaceBook: <FaFacebookF />,
+  // You can easily add more platforms here in the future
+};
 
   return (
     <div className="min-h-screen bg-background">
@@ -148,11 +156,21 @@ const Campaigns = () => {
                   {/* Campaign Header */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 gradient-neon rounded-xl flex items-center justify-center text-xl">
-                        {campaign.logo}
-                      </div>
+                      <div className="w-12 h-12">
+    <img
+        src={campaign.logo}
+        alt={`${campaign.brand} Logo`}
+        className="w-full h-full object-cover rounded-xl"
+    />
+</div>
                       <div>
-                        <h3 className="font-semibold text-gradient">{campaign.brand}</h3>
+                         <div className="flex items-center space-x-2 mb-1">
+                <h3 className="font-semibold text-gradient">{campaign.brand}</h3>
+                
+                <div className="bg-neutral-800 text-neutral-400 text-xs font-medium px-2 py-0.5 rounded-lg">
+                    ID:-VY{String(campaign.id).padStart(2, '0')}
+                </div>
+            </div>
                         <div className="flex items-center space-x-2">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium text-white ${campaign.color}`}>
                             {campaign.type}
@@ -187,19 +205,28 @@ const Campaigns = () => {
 
                   {/* Platforms */}
                   <div className="flex items-center justify-between">
+
+
+
+
                     <div className="flex -space-x-2">
-                      {campaign.platforms.map((platform, index) => (
-                        <div
-                          key={index}
-                          className="w-8 h-8 rounded-full gradient-neon flex items-center justify-center text-xs"
-                          title={platform}
-                        >
-                          {platform === 'Instagram' && '📸'}
-                          {platform === 'YouTube' && '📺'}
-                          {platform === 'FaceBook' && '🎵'}
-                        </div>
-                      ))}
-                    </div>
+  {campaign.platforms.map((platform, index) => {
+    // Check if the platform exists in our map, otherwise render nothing
+    if (!platformIcons[platform]) {
+      return null;
+    }
+
+    return (
+      <div
+        key={index}
+        className="w-8 h-8 rounded-full gradient-neon flex items-center justify-center text-sm" // Increased text size slightly for better icon visibility
+        title={platform}
+      >
+        {platformIcons[platform]}
+      </div>
+    );
+  })}
+</div>
                     <Button
                       variant="outline"
                       className="gradient-border interactive-hover group"

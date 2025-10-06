@@ -1,4 +1,4 @@
-
+import { FaInstagram, FaFacebookF, FaXTwitter, FaYoutube } from "react-icons/fa6";
 const WhyKreatorKart = () => {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
@@ -114,18 +114,18 @@ const WhyKreatorKart = () => {
                   </div>
 
                   <div className="grid grid-cols-3 gap-3">
-                    <div className="glass rounded-lg p-3 text-center transform hover:scale-105 transition-transform duration-300">
-                      <div className="text-lg font-semibold">📱</div>
+                    <div className="glass rounded-lg p-3 flex flex-col items-center space-y-1 transform hover:scale-105 transition-transform duration-300">
+                      <div className="text-lg font-semibold"><FaInstagram /></div>
                       <div className="text-xs text-muted-foreground/80">Instagram</div>
                       <div className="text-sm font-medium text-gradient">1.2M</div>
                     </div>
-                    <div className="glass rounded-lg p-3 text-center transform hover:scale-105 transition-transform duration-300">
-                      <div className="text-lg font-semibold">📺</div>
+                    <div className="glass rounded-lg p-3 flex flex-col items-center space-y-1 transform hover:scale-105 transition-transform duration-300">
+                      <div className="text-lg font-semibold"><FaYoutube /></div>
                       <div className="text-xs text-muted-foreground/80">YouTube</div>
                       <div className="text-sm font-medium text-gradient">890K</div>
                     </div>
-                    <div className="glass rounded-lg p-3 text-center transform hover:scale-105 transition-transform duration-300">
-                      <div className="text-lg font-semibold">X</div>
+                    <div className="glass rounded-lg p-3 flex flex-col items-center space-y-1 transform hover:scale-105 transition-transform duration-300">
+                      <div className="text-lg font-semibold"><FaXTwitter /></div>
                       <div className="text-xs text-muted-foreground/80">X</div>
                       <div className="text-sm font-medium text-gradient">310K</div>
                     </div>

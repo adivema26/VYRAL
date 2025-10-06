@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Button } from '../components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { url } from 'inspector';
 
 /**
  * @author ChebroluVirajith
@@ -82,14 +83,13 @@ const ApplicationSuccess: React.FC = () => {
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button
+              <a href="https://chat.whatsapp.com/BXa9TsxVyDm2I1sAvpwByV?mode=ems_copy_t" target="_blank" rel="noopener noreferrer"><Button
                 size="lg"
                 variant="outline"
-                onClick={handleGoHome}
                 className="border-muted-foreground/30 hover:border-primary/50 hover:bg-primary/10"
               >
                 Join our Community
-              </Button>
+              </Button></a>
             </div>
 
             <div className="mt-12 p-6 rounded-lg bg-muted/10 border border-muted/20">

@@ -134,7 +134,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating Stats Card */}
+              {/* Floating Stats Card 
               <div className="absolute bottom-20 left-0 glass card-highlight neon-glow rounded-2xl px-6 py-3 shadow-lg transform rotate-6 hover:rotate-0 transition-all duration-500 animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 rounded-full gradient-neon flex items-center justify-center animate-pulse">
@@ -142,7 +142,7 @@ const HeroSection = () => {
                   </div>
                   <div className="text-gradient neon-text font-semibold">Views rising!</div>
                 </div>
-              </div>
+              </div>*/}
 
               {/* Decorative Elements */}
               <div className="absolute -z-10 inset-0">
