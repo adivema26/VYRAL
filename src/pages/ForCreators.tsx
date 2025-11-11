@@ -57,7 +57,7 @@ const ForCreators = () => {
     {
       id: "item-2",
       question: "What kind of content can I create?",
-      answer: "You can create content that aligns with your niche and the brand's guidelines. We support all major platforms like Instagram, YouTube, and TikTok. Just be authentic and creative!"
+      answer: "You can create content that aligns with your niche and the brand's guidelines. We support all major platforms like Instagram, YouTube, and Facebook. Just be authentic and creative!"
     },
     {
       id: "item-3",
@@ -145,9 +145,9 @@ const ForCreators = () => {
               <div className="relative perspective-1000">
                 {/* Visual placeholder for creator content */}
                 <div className="w-full h-96 glass rounded-2xl p-6 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 animate-float">
-                  <div className="h-full w-full bg-gradient-to-br from-muted/40 to-muted/20 rounded-xl shimmer flex items-center justify-center">
-                    <span className="text-xl font-bold text-muted-foreground/50">Your Content Here</span>
-                  </div>
+                  <video autoPlay loop muted playsInline className="h-full w-full rounded-xl object-cover">
+                    <source src="public/images/creatorss.mp4" type="video/mp4" /> Your browser does not support the video tag. 
+                  </video>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@ const ForCreators = () => {
         <WhyKreatorKart />
         
         {/* Restored FAQ Section */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section id="faqs" className="relative py-16 lg:py-24 overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-5xl font-bold mb-4">

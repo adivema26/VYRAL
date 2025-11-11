@@ -95,9 +95,9 @@ const SignUpModal = ({ isOpen, onClose }) => {
         <div className="mt-8 text-sm text-muted-foreground">
           <p>
             By Signing In, I agree to the{' '}
-            <a href="#" className="text-primary hover:underline">Terms & Conditions</a>{' '}
+            <a href="public/files/Terms & Conditions .pdf" className="text-primary hover:underline">Terms & Conditions</a>{' '}
             and{' '}
-            <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+            <a href="public/files/Privacy Policy.pdf" className="text-primary hover:underline">Privacy Policy</a>
           </p>
         </div>
       </DialogContent>

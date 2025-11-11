@@ -41,7 +41,7 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center  h-16">
           {/* Logo */}
           <div 
             onClick={handleLogoClick}
@@ -59,6 +59,7 @@ const Navigation = () => {
             <span className="text-xl font-bold text-gradient">VYRAL</span>
           </div>
 
+          <div className="hidden md:flex flex-grow items-center justify-center">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a 
@@ -69,7 +70,7 @@ const Navigation = () => {
               How It Works
             </a>
             <Link to="/creators" className="text-muted-foreground hover:text-gradient transition-all">
-              For Creators
+             For Creators
             </Link>
             <Link 
               to="/campaigns" 
@@ -78,7 +79,9 @@ const Navigation = () => {
               Campaigns
             </Link>
           </div>
+          </div>
 
+          <div className="ml-auto flex items-center space-x-4">
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             {isAuthenticated ? (
@@ -107,6 +110,19 @@ const Navigation = () => {
             )}
           </div>
 
+
+          {/* --- PASTE THIS NEW SECTION for Mobile Auth --- */}
+          <div className="md:hidden">
+          {isAuthenticated ? (
+          <Link to="/profile" className="text-sm text-muted-foreground hover:text-gradient whitespace-nowrap"> Welcome, {user?.name ? user.name.split(' ')[0] : 'Creator'}
+          </Link>
+          ) : (
+          <Button className="gradient-neon text-white text-sm px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300" onClick={() => setIsSignUpOpen(true)}>
+          Sign Up / Log In
+          </Button>
+          )}
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden"
@@ -119,7 +135,9 @@ const Navigation = () => {
               <span className={`bg-foreground block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </div>
           </button>
+          </div>
         </div>
+        
 
         {/* Mobile Menu */}
         {isMenuOpen && (
@@ -144,7 +162,21 @@ const Navigation = () => {
               >
                 Campaigns
               </Link>
-              {isAuthenticated ? (
+              
+              {isAuthenticated && (
+  <Button 
+    variant="ghost" 
+    className="text-muted-foreground hover:text-gradient transition-all px-4 justify-start" 
+    onClick={() => { 
+      logout(); 
+      setIsMenuOpen(false); 
+    }}
+  >
+    Log Out
+  </Button>
+)}
+              
+              { /*{isAuthenticated ? (
                 <>
                   <Link 
                     to="/profile"
@@ -171,7 +203,7 @@ const Navigation = () => {
                     Sign Up / Log In
                   </Button>
                 </>
-              )}
+              )}*/}
             </div>
           </div>
         )}

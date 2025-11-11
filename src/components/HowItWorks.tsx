@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 /**
  * @author ChebroluVirajith
@@ -126,26 +127,38 @@ const HowItWorks = () => {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="glass rounded-2xl p-6 text-center">
             <a href="https://www.instagram.com/letsgetvyral/" target="_blank" rel="noopener noreferrer">
-            <div className="text-3xl font-bold text-gradient mb-2">INSTAGRAM</div>
-            <div className="text-sm text-muted-foreground/80"></div>
+            <div className="text-5xl text-gray-300 mb-4 flex justify-center">
+        <FaInstagram />
+      </div>
+            <div className="text-0.5xl font-bold text-gradient mb-2">INSTAGRAM</div>
+            <div className="text-sm text-muted-foreground/80">@letsgetvyral</div>
             </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
-            <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="text-3xl font-bold text-gradient mb-2">YOUTUBE</div>
-            <div className="text-sm text-muted-foreground/80"></div>
+            <a href="http://www.youtube.com/@letsgetvyral" target="_blank" rel="noopener noreferrer">
+              <div className="text-5xl text-gray-300 mb-4 flex justify-center">
+        <FaYoutube />
+      </div>
+            <div className="text-0.5xl font-bold text-gradient mb-2">YOUTUBE</div>
+            <div className="text-sm text-muted-foreground/80">@letsgetvyral</div>
             </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
-            <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="text-3xl font-bold text-gradient mb-2">X</div>
-            <div className="text-sm text-muted-foreground/80"></div>
+            <a href="https://x.com/letsgetvyral" target="_blank" rel="noopener noreferrer">
+              <div className="text-5xl text-gray-300 mb-4 flex justify-center">
+        <FaXTwitter />
+      </div>
+            <div className="text-0.5xl font-bold text-gradient mb-2">X</div>
+            <div className="text-sm text-muted-foreground/80">@letsgetvyral</div>
             </a>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
-            <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="text-3xl font-bold text-gradient mb-2">FACEBOOK</div>
-            <div className="text-sm text-muted-foreground/80"></div>
+            <a href="http://facebook.com/letsgetvyral/" target="_blank" rel="noopener noreferrer">
+              <div className="text-5xl text-gray-300 mb-4 flex justify-center">
+        <FaFacebookF />
+      </div>
+            <div className="text-0.5xl font-bold text-gradient mb-2">FACEBOOK</div>
+            <div className="text-sm text-muted-foreground/80">@letsgetvyral</div>
             </a>
           </div>
         </div>

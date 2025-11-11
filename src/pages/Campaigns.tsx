@@ -32,27 +32,31 @@ const Campaigns = () => {
       brand: "VYRAL",
       logo: "/images/vyral_logo.jpg",
       payout: "100 coins",
-      description: "Promote our brand and earn point to reedem yummy Frankies",
-      progress: 75,
-      budget:"₹75 of ₹100 is paid out",
-      type: "Fashion",
+      description: "Promote our brand and earn point to reedem REWARDS",
+      progress: 100,
+      budget:"₹100 of ₹100 is paid out",
+      type: "",
       platforms: ["Instagram", "YouTube","FaceBook"],
       views: "1.2K",
       color: "bg-primary"
     },
-     {
-      id: 2,
-      brand: "TechMonkiez",
-      logo: "/images/tm.png",
-      payout: "₹49",
-      description: "Create trendy fashion content and styling tips for our latest collection",
-      progress: 26.8,
-      budget:"₹26.8 of ₹100 is paid out",
-      type: "Technology",
-      platforms: ["Instagram","FaceBook"],
+    {
+      id: 1,
+      brand: "VYRAL",
+      logo: "/images/vyral_logo.jpg",
+      payout: "100 coins",
+      description: "Promote our brand and earn point to reedem REWARDS",
+      progress: 20,
+      budget:"₹100 of ₹100 is paid out",
+      type: "",
+      platforms: ["Instagram", "YouTube","FaceBook"],
       views: "1.2K",
       color: "bg-primary"
     },
+    
+    
+    
+    
     
   ];
 
@@ -128,6 +132,13 @@ const Campaigns = () => {
                 Technology
               </Button>
               <Button
+                variant={selectedFilter === 'entertainment' ? 'default' : 'outline'}
+                className={`gradient-border ${selectedFilter === 'entertainment' ? 'gradient-neon' : ''}`}
+                onClick={() => setSelectedFilter('entertainment')}
+              >
+                Entertainment
+              </Button>
+              <Button
                 variant={selectedFilter === 'food' ? 'default' : 'outline'}
                 className={`gradient-border ${selectedFilter === 'food' ? 'gradient-neon' : ''}`}
                 onClick={() => setSelectedFilter('food')}
@@ -141,6 +152,7 @@ const Campaigns = () => {
               >
                 Education
               </Button>
+              
             </div>
 
             {/* Campaigns Grid */}
@@ -216,6 +228,8 @@ const Campaigns = () => {
       return null;
     }
 
+    const isCampaignFull = campaign.progress >= 100;
+
     return (
       <div
         key={index}
@@ -229,10 +243,19 @@ const Campaigns = () => {
 </div>
                     <Button
                       variant="outline"
-                      className="gradient-border interactive-hover group"
-                      onClick={() => handleApplyClick(campaign.id)} // Open modal on click
-                    >
-                      <span className="text-gradient group-hover:neon-text">Apply Now</span>
+                    className={`
+                      gradient-border group
+                      ${campaign.progress >= 100 ? 'opacity-60 cursor-not-allowed' : 'interactive-hover'}
+                    `}
+                    disabled={campaign.progress >= 100}
+                    onClick={() => campaign.progress < 100 && handleApplyClick(campaign.id)}
+                  >
+                    <span className={`
+                      text-gradient 
+                      ${campaign.progress >= 100 ? '' : 'group-hover:neon-text'}
+                    `}>
+                      {campaign.progress >= 100 ? 'Campaign Over' : 'Apply Now'}
+                    </span>
                     </Button>
                   </div>
                 </div>
