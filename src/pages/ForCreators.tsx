@@ -145,8 +145,8 @@ const ForCreators = () => {
               <div className="relative perspective-1000">
                 {/* Visual placeholder for creator content */}
                 <div className="w-full h-96 glass rounded-2xl p-6 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 animate-float">
-                  <video autoPlay loop muted playsInline className="h-full w-full rounded-xl object-cover">
-                    <source src="public/images/creatorss.mp4" type="video/mp4" /> Your browser does not support the video tag. 
+                  <video src="public/creatorss.mp4" autoPlay loop muted playsInline className="h-full w-full rounded-xl object-cover">
+                    <source src="public/creatorss.mp4" type="video/mp4" /> Your browser does not support the video tag. 
                   </video>
                 </div>
               </div>
